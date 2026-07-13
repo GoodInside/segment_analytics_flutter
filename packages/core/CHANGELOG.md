@@ -1,3 +1,7 @@
+## 1.1.12
+
+- Bump `flutter_fgbg` to `^0.8.0`, which adds Swift Package Manager support (no API change).
+
 ## 1.1.11
 
 - Introduces file size checks on analytics-flutter-queue_flushing_plugin.json file so that the SDK avoids queuing events that would push the on-disk queue file above 512 KB.
