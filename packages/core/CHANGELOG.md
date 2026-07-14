@@ -1,5 +1,6 @@
 ## 1.1.12
 
+- Relocate the iOS and macOS `Package.swift` into the `segment_analytics/` plugin subdirectory (`ios/segment_analytics/Package.swift`, `macos/segment_analytics/Package.swift`) with sources under `Sources/segment_analytics/`, matching the layout Flutter's Swift Package Manager integration expects. The previous manifests sat at `ios/Package.swift` / `macos/Package.swift`, so Flutter never detected them and still treated the plugin as SPM-incompatible. CocoaPods `source_files` updated to match; no Dart or Swift API change.
 - Bump `flutter_fgbg` to `^0.8.0`, which adds Swift Package Manager support (no API change).
 
 ## 1.1.11

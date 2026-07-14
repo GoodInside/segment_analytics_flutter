@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "segment_analytics",
     platforms: [
-        .iOS("12.0"),
+        .macOS("10.14"),
     ],
     products: [
         .library(name: "segment_analytics", targets: ["segment_analytics"]),
@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "segment_analytics",
             dependencies: [],
-            path: "Classes"
+            path: "Sources/segment_analytics"
         ),
     ]
 )
