@@ -28,6 +28,15 @@ android {
     namespace 'com.segment.analytics'
     compileSdkVersion 35 //Patch for for Github issue #147
 
+    // This module's namespace collides with the native Segment SDK
+    // (com.segment.analytics.kotlin:android), which generates its own
+    // com.segment.analytics.BuildConfig — R8 then fails a minified build on the
+    // duplicate type. Nothing here references BuildConfig, so suppressing it
+    // lets both SDKs ship in one binary during the native-SDK rollout.
+    buildFeatures {
+        buildConfig false
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
